@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Sabrina" />
+    <meta name="description" content="Lorem ipsum dolor sit amet" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>Cari Mobil</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+
+    <!-- Example CSS -->
+    <link href="./css/cars.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg py-3 fixed-top w-100" aria-label="Offcanvas navbar large" style="background-color: #f1f3ff">
+      <div class="container-fluid container-md container-nav">
+        <a class="navbar-brand" href="#hero">
+          <img src="images/logo.png" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas w-50 offcanvas-end text-bg-white" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+          <div class="offcanvas-header">
+            <h4 class="offcanvas-title fw-bold" id="offcanvasNavbar2Label" href="#hero">BCR</h4>
+            <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item" data-bs-dismiss="offcanvas">
+                <a class="nav-link mx-md-2 text-black" aria-current="page" href="#our-service">Our Services</a>
+              </li>
+              <li class="nav-item" data-bs-dismiss="offcanvas">
+                <a class="nav-link mx-md-2 text-black" href="#why-us">Why us</a>
+              </li>
+              <li class="nav-item" data-bs-dismiss="offcanvas">
+                <a class="nav-link mx-md-2 text-black" href="#testimonial-section">Testimonial</a>
+              </li>
+              <li class="nav-item" data-bs-dismiss="offcanvas">
+                <a class="nav-link mx-md-2 text-black" href="#faq">FAQ</a>
+              </li>
+              <li class="nav-item text-white">
+                <button class="btn btn-success rounded-1">Registrasi</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Hero -->
+    <section id="hero">
+      <div class="containe-fluid container-hero pt-5">
+        <div class="row d-md-flex d-block pt-5">
+          <div class="col col-hero_tagline ps-4 ms-md-5 pt-md-5">
+            <h1 class="fw-bold tag-line_hero ms-md-5">Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)</h1>
+            <p class="describe-tagline ms-md-5 pt-2">Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
+            <button type="button" class="btn btn-success btn-lg rounded-1 ms-md-5">Mulai Sewa Mobil</button>
+          </div>
+          <div class="col">
+            <img class="img_car" src="images/img_car.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <!-- Panel Cari Mobil -->
+    <div class="container" id="cari-mobil">
+      <div class="container py-3 ps-5" id="cm-search">
+        <form method="GET" action=".">
+          <div class="form-search d-flex justify-content-center">
+            <!-- Tipe Driver -->
+            <div class="col driver me-4" style="width: 20%">
+              <label>Tipe Driver</label>
+              <div class="input-group">
+                <select class="form-select" id="type-driver">
+                  <option hidden>Pilih Tipe Driver</option>
+                  <option value="true">Dengan Sopir</option>
+                  <option value="false">Tanpa Sopir (Lepas Kunci)</option>
+                </select>
+              </div>
+            </div>
+            <!-- Akhir Tipe Driver -->
+
+            <!-- Tanggal -->
+            <div class="col tanggal me-4" style="width: 20%">
+              <label>Tanggal</label>
+              <div class="input-group" id="inputGroupDate">
+                <input placeholder="Pilih Tanggal" type="date" id="input-date" class="form-control" required />
+              </div>
+            </div>
+            <!-- Akhir Tanggal -->
+
+            <!-- Waktu -->
+            <div class="col waktu me-4" style="width: 20%">
+              <label>Waktu Jemput/ Ambil</label>
+              <div class="input-group">
+                <input type="time" class="form-control" id="input-time" placeholder="Pilih Waktu" />
+              </div>
+            </div>
+            <!-- Akhir Waktu -->
+
+            <!-- Jumlah Penumpang -->
+            <div class="col-md-4 penumpang me-4" style="width: 20%">
+              <label>Jumlah Penumpang (Optional)</label>
+              <div class="input-group">
+                <select class="form-select" id="input-passangers">
+                  <option hidden>Jumlah Penumpang</option>
+                  <option value="1">2 Orang</option>
+                  <option value="2">4 Orang</option>
+                  <option value="3">6 orang</option>
+                </select>
+              </div>
+            </div>
+            <!-- Akhir Jumlah Penumpang -->
+
+            <!-- Button Search -->
+            <div class="col tombol-search d-flex my-3">
+              <button type="button" class="btn btn-success px-auto" id="load-button">Cari Mobil</button>
+            </div>
+            <!-- Akhir Button Search -->
+          </div>
+        </form>
+      </div>
+      <div id="cars-container">
+        <div class="row">
+          <div class="col-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Akhir Cari Mobil -->
+
+    <!-- Card Car -->
+    <!-- <div id="cars-container" class="container">
+      <div class="row my-5 ms-5">
+        <div class="col-4">
+          <div class="card" style="width: 18rem">
+            <img src="./images/car01.min.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h6 class="card-title fw-bold"></h6>
+              <p class="card-text"></p>
+              <div class="mt-1"><i class="mt-1 me-2 fa-solid bi-people"> People</i></div>
+              <div class="tentang mt-1"><i class="mt-1 me-2 icon-mobil fa-solid bi-gear"></i></div>
+              <div class="tentang mt-1 mb-2"><i class="mt-1 me-2 icon-mobil fa-solid bi-calendar"></i></div>
+              <a href="#" class="btn btn-success ms-5">Pilih Mobil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- End Panel -->
+  </body>
+  <!-- My Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+  <!-- Example Javascript -->
+  <script type="text/javascript" src="./scripts/binar.js"></script>
+  <script type="text/javascript" src="./scripts/app.example.js"></script>
+  <script type="text/javascript" src="./scripts/car.example.js"></script>
+  <script type="text/javascript" src="./scripts/main.example.js"></script>
+</html>

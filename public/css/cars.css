@@ -1,0 +1,39 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+/* Hero */
+#hero {
+  background-color: #f1f3ff;
+}
+
+.container #cari-mobil::after {
+  border: 5px solid black;
+  width: 80%;
+}
+
+.container #cm-search {
+  /* border: 1px solid black; */
+  width: 95%;
+  box-shadow: 2px 3px 5px 0px black;
+  z-index: 999999999;
+  margin-top: 10px;
+}
+
+.form-search {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: center;
+  /* gap: 10px; */
+}
+
+.form-select,
+.form-control {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+}
