@@ -14,23 +14,35 @@ class App {
     await this.load();
 
     this.loadButton.onclick = this.run;
-
     // Register click listener
     // this.clearButton.onclick = this.clear;
     // this.loadButton.onclick = this.run;
   }
 
   run = () => {
-    let tipeDriver = this.typeDriver.value;
+    let typeDriver = this.typeDriver.value;
     let filterDate = this.inputDate.value;
     let filterTime = this.inputTime.value;
     let numPassengers = this.inputPassangers.value;
 
-    Car.list.forEach((car) => {
-      const node = document.createElement('div');
-      node.innerHTML = car.render();
-      this.carContainerElement.appendChild(node);
-    });
+    Car.list
+      .filter((car) => {
+        if (car.capacity === parseInt(numPassengers)) {
+          return car;
+        }
+      })
+      .map((car) => {
+        let col = document.createElement("div")
+        col.className = 'col';
+        col.innerHTML = car.render();
+        this.carContainerElement.appendChild(col)
+      });
+
+    // Car.list.forEach((car) => {
+    //   const node = document.createElement('div');
+    //   node.innerHTML = car.render();
+    //   this.carContainerElement.appendChild(node);
+    // });
   };
 
   async load() {
@@ -44,13 +56,6 @@ class App {
     while (child) {
       child.remove();
       child = this.carContainerElement.firstElementChild;
-    }
-  };
-
-  validateInput = () => {
-    console.log(this.tipeDriver.value);
-    if (!this.tipeDriver.value) {
-      alert('Pilih Driver');
     }
   };
 }

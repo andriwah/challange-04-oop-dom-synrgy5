@@ -25,10 +25,9 @@ class Car {
 
   render() {
     return `
-    <div class="row my-5 ms-5">
-      <div class="col-4">
-        <div class="card" style="width: 18rem">
-          <img src="${this.image}" class="card-img-top" alt="${this.manufacture}" />
+      <div class="col mt-3">
+        <div class="card w-75 h-100">
+          <img src="${this.image}" class="card-img-top" alt="${this.manufacture}";/>
           <div class="card-body">
             <h6 class="card-title fw-bold">${this.manufacture} ${this.model}</h6>
             <p class="card-text fw-bold">Rp. ${this.rentPerDay}/hari</p>
@@ -40,7 +39,7 @@ class Car {
           </div>
         </div>
       </div>
-    </div>`;
+    `;
   }
 }
 
