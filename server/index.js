@@ -6,6 +6,9 @@ http
   .createServer((req, res) => {
     switch (req.url) {
       case '/':
+        req.url = 'index.html';
+        break;
+      case '/car':
         req.url = 'cars.html';
         break;
     }
