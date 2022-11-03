@@ -2,12 +2,12 @@ class App {
   constructor() {
     // this.clearButton = document.getElementById("clear-btn");
     // this.loadButton = document.getElementById("load-btn");
-    this.typeDriver = document.getElementById('type-driver');
-    this.inputDate = document.getElementById('input-date');
-    this.inputTime = document.getElementById('input-time');
-    this.inputPassangers = document.getElementById('input-passangers');
-    this.loadButton = document.getElementById('load-button');
-    this.carContainerElement = document.getElementById('cars-container');
+    this.typeDriver = document.getElementById("type-driver");
+    this.inputDate = document.getElementById("input-date");
+    this.inputTime = document.getElementById("input-time");
+    this.inputPassangers = document.getElementById("input-passangers");
+    this.loadButton = document.getElementById("load-button");
+    this.carContainerElement = document.getElementById("cars-container");
   }
 
   async init() {
@@ -20,29 +20,36 @@ class App {
   }
 
   run = () => {
-    let typeDriver = this.typeDriver.value;
+    let typeDriver = this.typeDriver.value === "true" ? true : false;
     let filterDate = this.inputDate.value;
     let filterTime = this.inputTime.value;
     let numPassengers = this.inputPassangers.value;
 
+    let filterDateTime = new Date(`${filterDate} ${filterTime}`);
+    
+    this.carContainerElement.innerHTML = ''
+
     Car.list
       .filter((car) => {
-        if (car.capacity === parseInt(numPassengers)) {
+        let avail = new Date(car.availableAt);
+        if (
+          parseInt(numPassengers) === car.capacity
+          && typeDriver === car.available
+          && filterDateTime.getDate() === avail.getDate()
+          && filterDateTime.getMonth() === avail.getMonth()
+          && filterDateTime.getFullYear() === avail.getFullYear()
+          && avail.getTime() > filterDateTime.getTime()
+        ) {
+          console.log(car);
           return car;
         }
       })
       .map((car) => {
-        let col = document.createElement("div")
-        col.className = 'col';
+        let col = document.createElement("div");
+        col.className = "col-md-4";
         col.innerHTML = car.render();
-        this.carContainerElement.appendChild(col)
+        this.carContainerElement.appendChild(col);
       });
-
-    // Car.list.forEach((car) => {
-    //   const node = document.createElement('div');
-    //   node.innerHTML = car.render();
-    //   this.carContainerElement.appendChild(node);
-    // });
   };
 
   async load() {

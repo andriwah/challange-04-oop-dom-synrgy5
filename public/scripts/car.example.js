@@ -26,7 +26,7 @@ class Car {
   render() {
     return `
       <div class="col mt-3">
-        <div class="card w-75 h-100">
+        <div class="card" style="width: 18rem;">
           <img src="${this.image}" class="card-img-top" alt="${this.manufacture}";/>
           <div class="card-body">
             <h6 class="card-title fw-bold">${this.manufacture} ${this.model}</h6>
